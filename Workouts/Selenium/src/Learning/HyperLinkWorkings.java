@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class HyperLinkWorkings {
 
 	public static void main(String[] args) {
-System.setProperty("webdriver.chrome.driver", "D:\\Gowri_Backup\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\Gowri_Backup\\driver\\chromedriver.exe");
 		
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
