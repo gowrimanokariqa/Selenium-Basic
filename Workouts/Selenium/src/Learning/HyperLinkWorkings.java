@@ -21,7 +21,7 @@ public class HyperLinkWorkings {
 		//open respective page
 		driver.navigate().to("https://www.leafground.com/dashboard.xhtml");
 		
-		//clicking on Element menu & opening the HyperLink page
+		//clicking on Element menu & opening the Hyper Link page
 		driver.findElement(By.xpath("//ul[@id='menuform:j_idt37']//following::li[@id='menuform:j_idt40']")).click();
 		driver.findElement(By.xpath("//span[text()='Hyper Link']")).click();
 		
