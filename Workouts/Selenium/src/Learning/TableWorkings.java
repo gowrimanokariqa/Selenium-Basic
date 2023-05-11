@@ -21,7 +21,7 @@ public class TableWorkings {
 		//open respective page
 		driver.navigate().to("https://www.leafground.com/dashboard.xhtml");
 		
-		//clicking on Element menu & opening the HyperLink page
+		//clicking on Element menu & opening the Table page
 		driver.findElement(By.xpath("//ul[@id='menuform:j_idt37']//following::li[@id='menuform:j_idt41']")).click();
 		driver.findElement(By.xpath("//li[@id='menuform:m_table']//span[text()='Table']")).click();
 		
@@ -48,6 +48,9 @@ public class TableWorkings {
 		
 		//Navigate to the NextPage
 		driver.findElement(By.xpath("//a[@aria-label='Next Page']")).click();
+		
+		//navigate to Last page
+		driver.findElement(By.xpath("//a[@aria-label='Last Page']")).click();
 	}
 
 }
