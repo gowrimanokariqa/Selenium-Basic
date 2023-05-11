@@ -1,10 +1,5 @@
 package Learning;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -18,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GridWorkings {
 
-	public static void main(String[] args) throws AWTException {
+	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "D:\\Gowri_Backup\\driver\\chromedriver.exe");
 		
 		ChromeOptions options = new ChromeOptions();
