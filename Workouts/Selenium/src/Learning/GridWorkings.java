@@ -1,5 +1,10 @@
 package Learning;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -13,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GridWorkings {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws AWTException, InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "D:\\Gowri_Backup\\driver\\chromedriver.exe");
 		
 		ChromeOptions options = new ChromeOptions();
@@ -27,7 +32,7 @@ public class GridWorkings {
 		//clicking on Element menu & opening the Grid page
 		driver.findElement(By.xpath("//ul[@id='menuform:j_idt37']//following::li[@id='menuform:j_idt41']")).click();
 		driver.findElement(By.xpath("//li[@id='menuform:m_crud']//span[text()='Grid']")).click();
-		
+	
 		//perform bulk delete
 		driver.findElement(By.xpath("//*[@id='form:dt-products:j_idt96']//div[@id='form:dt-products_head_checkbox']")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='form:delete-products-button']")));
@@ -82,7 +87,23 @@ public class GridWorkings {
 		//download function
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='ui-growl-message']//span[contains(text(),'Product Removed')]")));
 		driver.findElement(By.xpath("//*[@id='form:j_idt93']//span[contains(text(),'Export')]")).click();
-		System.out.println("Data downloaded");	
+		System.out.println("Data downloaded");
+		
+		//Import function
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left']")));
+		driver.findElement(By.xpath("//span[@class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left']")).click();
+		
+		StringSelection selection = new StringSelection("C:\\Users\\ADMIN\\Documents\\Product Test Data.xlsx");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+		Robot rob = new Robot();
+		Thread.sleep(1000);
+		rob.keyPress(KeyEvent.VK_CONTROL);
+		rob.keyPress(KeyEvent.VK_V);
+		rob.keyRelease(KeyEvent.VK_V);
+		rob.keyRelease(KeyEvent.VK_CONTROL);
+		rob.keyPress(KeyEvent.VK_ENTER);
+		rob.keyRelease(KeyEvent.VK_ENTER);
+		System.out.println("File has attached");
 	}
 
 }
