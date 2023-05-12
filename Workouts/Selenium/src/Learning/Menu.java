@@ -20,7 +20,7 @@ public class Menu {
 		//open respective page
 		driver.get("https://www.leafground.com/dashboard.xhtml");
 		
-		//clicking on browser menu & opening the Alert page
+		//clicking on browser menu & opening the Menu page
 		driver.findElement(By.xpath("//ul[@id='menuform:j_idt37']//following::li[@id='menuform:j_idt42']")).click();
 		driver.findElement(By.xpath("//span[text()='Menu']")).click();
 		
